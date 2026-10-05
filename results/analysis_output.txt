@@ -1,0 +1,38 @@
+Records joined: 1548 
+Records excluded for missing analysis variables: 23 
+Records analyzed: 1525 
+
+Outcome
+Approved Rejected 
+    1358      167 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  33750  121500  166500  191399  225000 1575000 
+    Property_owner Applicants Rejected Rejection_percent
+No              No        533       63          11.81989
+Yes            Yes        992      104          10.48387
+
+Call:
+glm(formula = label ~ income_10000 + property, family = binomial, 
+    data = analysis_data)
+
+Coefficients:
+              Estimate Std. Error z value Pr(>|z|)    
+(Intercept)  -2.143834   0.181414 -11.817   <2e-16 ***
+income_10000  0.007189   0.006462   1.112    0.266    
+propertyYes  -0.144331   0.169890  -0.850    0.396    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1053.7  on 1524  degrees of freedom
+Residual deviance: 1052.0  on 1522  degrees of freedom
+AIC: 1058
+
+Number of Fisher Scoring iterations: 4
+
+                Predictor Odds_ratio  Lower_95 Upper_95   P_value
+income_10000 income_10000   1.007215 0.9945380 1.020053 0.2659474
+propertyYes   propertyYes   0.865601 0.6204466 1.207622 0.3955715
+
+R version: R version 4.5.1 (2025-06-13 ucrt) 
